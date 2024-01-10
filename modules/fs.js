@@ -24,18 +24,42 @@ const { error } = require('node:console');
 //})
 
 //Step two create File, writing text to a file and file changed:
-fs.writeFile(path.join(__dirname, 'notes', 'january.txt'), 'Create new Lesson NodeJs', err=>{
+fs.writeFile(path.join(__dirname, 'notes', 'january.txt'), 'I love you NodeJs :)', err=>{
     if (err) throw new Error()
     console.log('File was created Successfully')
 
-    fs.appendFile(path.join(__dirname, 'notes', 'january.txt'), 'Hello My name is NodeJs', err=> {
-        if (err) throw new Error()
+    //fs.appendFile(path.join(__dirname, 'notes', 'january.txt'), 'Hello My name is NodeJs', err=> {
+      //  if (err) throw new Error();
 
-        console.log('File was changed successfully!');
-    })
+        //console.log('File was changed successfully!');
+    //})
+
+    
 })
 
-console.log('Hello my name is Devana.Developer')
+
+fs.readFile(path.join(__dirname, 'notes', 'january.txt'), "utf-8" ,(err, data)=>{
+  if (err) throw new Error()
+  console.log(Buffer.from(data).toString())
+})
+
+
+fs.writeFile(path.join(__dirname, 'hello.txt'), 'Create new Lesson NodeJs. Hello Ozodbek!', err=>{
+    if (err) throw new Error()
+    console.log('File was created Successfully')
+})
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
